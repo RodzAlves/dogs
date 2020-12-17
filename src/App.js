@@ -1,13 +1,20 @@
 import React from 'react';
-import { GlobalStyle, Container } from './global';
+import { GlobalStyle } from './styles/global';
 import Routes from './routes';
+import { UserStorage } from './context/UserContext';
+import AppProvider from './hooks';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
   return (
-    <Container>
-      <GlobalStyle />
-      <Routes />
-    </Container>
+    <Router>
+      <AppProvider>
+        <UserStorage>
+          <GlobalStyle />
+          <Routes />
+        </UserStorage>
+      </AppProvider>
+    </Router>
   );
 }
 

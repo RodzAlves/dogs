@@ -1,24 +1,59 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+import {
+  Container,
+  Nav,
+  StyledLink,
+  LogoContainer,
+  Text,
+  InfoWrapper,
+  SwitchTheme,
+  DogsLogo,
+  UserIcon,
+} from './styles';
+import { UserContext } from '../../context/UserContext';
+import { shade } from 'polished';
+import { useTheme } from '../../hooks/theme';
 
-import { Container, Nav, StyledLink, Logo, Text } from './styles';
+export default function Header({ children }) {
+  const { data } = useContext(UserContext);
+  const { colors, title } = useContext(ThemeContext);
+  const { toggleTheme } = useTheme();
 
-import { ReactComponent as Dogs } from '../../assets/dogs.svg';
-import { ReactComponent as UserIcon } from '../../assets/usuario.svg';
-
-const Header = () => {
   return (
     <Container>
       <Nav>
-        <Logo to="/" aria-label="Dogs - Home">
-          <Dogs />
-        </Logo>
-        <StyledLink to="/login">
-          <Text>Login / Create</Text>
-          <UserIcon />
-        </StyledLink>
+        <LogoContainer to="/" aria-label="Dogs - Home">
+          <DogsLogo />
+        </LogoContainer>
+        <InfoWrapper>
+          {data ? (
+            <StyledLink to="/profile">
+              <Text>{data.nome}</Text>
+              <UserIcon />
+            </StyledLink>
+          ) : (
+            <StyledLink to="/login">
+              <Text>Login / Register</Text>
+              <UserIcon />
+            </StyledLink>
+          )}
+
+          <SwitchTheme
+            onChange={toggleTheme}
+            checked={title === 'light'}
+            checkedIcon={false}
+            uncheckedIcon={false}
+            height={10}
+            width={40}
+            offHandleColor={shade(0.2, colors.colorSubText)}
+            onHandleColor={shade(0.2, colors.colorSubText)}
+            handleDiameter={20}
+            offColor={shade(0.1, colors.colorPrimary)}
+            onColor={shade(0.2, colors.colorBackgroundInput)}
+          />
+        </InfoWrapper>
       </Nav>
     </Container>
   );
-};
-
-export default Header;
+}
