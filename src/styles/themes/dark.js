@@ -10,5 +10,7 @@ export default {
     colorBackground: '#222831',
     colorLineBox: '#fea',
     iconColor: '#f1f1f1',
+    buttonBoxShadowPrimary: '#303743',
+    buttonBoxShadowSecondary: '#2C323D',
   },
 };

@@ -1,20 +1,27 @@
-import React, { useContext, useState } from 'react';
-import { Container } from './styles';
-import history from '../../services/history';
-import { UserContext } from '../../context/UserContext';
-import { Title } from '../../styles/global';
-import UserMenu from '../../components/UserMenu';
+import React from 'react';
+import Feed from '../../components/Feed';
+import { useParams } from 'react-router-dom';
+import { Container, BackIcon, WrapperDescription } from './styles';
+import { SubTitle } from '../../styles/global';
+import { Link } from 'react-router-dom';
+import Head from '../../utils/Head';
 
 const Profile = () => {
-  const { login, handleUserLogout } = useContext(UserContext);
-
-  if (!login) {
-    history.push('/login');
-  }
+  const { user } = useParams();
 
   return (
     <Container>
-      <UserMenu>My Feed</UserMenu>
+      <Head
+        title={`@${user}`}
+        description="Profile of a user registered on the network Dogs."
+      />
+      <WrapperDescription>
+        <Link to="/">
+          <BackIcon />
+        </Link>
+        <SubTitle>@{user}</SubTitle>
+      </WrapperDescription>
+      <Feed user={user} />
     </Container>
   );
 };

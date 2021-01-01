@@ -1,78 +1,23 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
-import { ReactComponent as Feed } from '../../assets/feed.svg';
-import { ReactComponent as Statistics } from '../../assets/estatisticas.svg';
-import { ReactComponent as Add } from '../../assets/adicionar.svg';
-import { ReactComponent as Logout } from '../../assets/sair.svg';
+import { ReactComponent as Back } from '../../assets/left-arrow.svg';
 
-export const FeedIcon = styled(Feed)`
-  path,
-  circle {
-    fill: ${(props) => props.theme.colors.iconColor};
-  }
+export const BackIcon = styled(Back)`
+  color: ${(props) => props.theme.colors.iconColor};
+  width: 1.5rem;
 `;
 
-export const StatisticsIcon = styled(Statistics)`
-  rect {
-    fill: ${(props) => props.theme.colors.iconColor};
-  }
-`;
-
-export const AddNewPhotoIcon = styled(Add)`
-  path,
-  circle {
-    fill: ${(props) => props.theme.colors.iconColor};
-  }
-`;
-
-export const LogoutIcon = styled(Logout)`
-  path,
-  circle {
-    fill: ${(props) => props.theme.colors.iconColor};
-  }
-`;
-
-const activeClassName = 'nav-item-active';
-
-export const Container = styled.div`
+export const WrapperDescription = styled.section`
+  margin-top: 2rem;
   max-width: 50rem;
+
   padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const Container = styled.section`
+  max-width: 50rem;
+  padding: 0 0.5rem;
   margin: 0 auto;
-`;
-
-export const UserHeaderWrapper = styled.nav`
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  a,
-  button {
-    background: ${(props) => props.theme.colors.colorBackgroundInput};
-    border-radius: 0.2rem;
-    height: 40px;
-    width: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid transparent;
-    transition: 0.1s;
-    cursor: pointer;
-  }
-
-  a:hover,
-  a:focus,
-  button:hover,
-  button:focus {
-    background: ${(props) => props.theme.colors.colorBackground};
-    box-shadow: 0 0 0 3px ${(props) => props.theme.colors.colorBackgroundInput};
-    border-color: #333;
-    outline: none;
-  }
-`;
-
-export const Link = styled(NavLink).attrs({ activeClassName })`
-  &.${activeClassName} {
-    background: ${(props) => props.theme.colors.colorBackgroundInput};
-    box-shadow: 0 0 0 3px ${(props) => props.theme.colors.colorBackgroundInput};
-    border-color: ${(props) => props.theme.colors.iconColor};
-  }
 `;

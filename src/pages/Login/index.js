@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { Helmet } from 'react-helmet';
+import { FiLogIn } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -9,9 +9,13 @@ import { Animation, Title } from '../../styles/global';
 import {
   Container,
   RegisterContainer,
-  ButtonLost,
   FormContainer,
+  StyledLink,
 } from './styles';
+import Error from '../../utils/Error';
+import Head from '../../utils/Head';
+import loginIcon from '../../assets/log-in.svg';
+import userIcon from '../../assets/user.svg';
 
 const Login = () => {
   const username = useForm();
@@ -29,42 +33,44 @@ const Login = () => {
   }
 
   if (login === true) {
-    history.push('/profile');
+    history.push('/dashboard');
   }
   return (
     <Animation>
-      <Helmet>
-        <title>Dogs | Login</title>
-        <meta name="login" content="Login to Dogs Social Media" />
-      </Helmet>
+      <Head title="Sign in to your account" description="Sign in to Dogs." />
       <Container>
         <FormContainer>
-          <Title>Login</Title>
+          <Title>Sign in</Title>
           <form onSubmit={handleLogin}>
             <Input label="Username" type="text" name="username" {...username} />
+
             <Input
               label="Password"
               type="password"
               name="password"
               {...password}
             />
+            <StyledLink to="/lost-password">FORGOT PASSWORD?</StyledLink>
+
             {loading ? (
               <Button disabled>Loading...</Button>
             ) : (
-              <Button>Login</Button>
+              <Button>
+                LOGIN
+                <img src={loginIcon} alt="" />
+              </Button>
             )}
 
-            {error && (
-              <p style={{ color: '#f31', margin: '1rem 0' }}>{error}</p>
-            )}
+            <Error error={error && 'Invalid username or password.'} />
           </form>
-          <ButtonLost to="/lost-password">Lost your password?</ButtonLost>
+
+          {/*<ButtonLost to="/lost-password">FORGOT PASSWORD?</ButtonLost>*/}
 
           <RegisterContainer>
             <h2>Register</h2>
             <p>Don't have an account yet?</p>
             <Link to={'/create-user'}>
-              <Button>Create now</Button>
+              <Button>SIGN UP</Button>
             </Link>
           </RegisterContainer>
         </FormContainer>

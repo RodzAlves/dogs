@@ -8,15 +8,34 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+      -webkit-text-fill-color: ${(props) => props.theme.colors.colorSubText};
+      opacity: 0.6;
+      -webkit-box-shadow: 0 0 0px 1000px ${(props) =>
+        props.theme.colors.colorBackgroundInput} inset;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
   body {
     margin: 0px;
     color: #333;
     --type-first: Montserrat, Helvetica, Arial, sans-serif;
-    --type-second: Montserrat, serif;
+    --type-second: Montserrat, sans-serif;
     font-family: var(--type-first);
     padding-top: 4rem;
     background: ${(props) => props.theme.colors.colorBackground};
     transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh + 10rem);
   }
 
   h1, h2, h3, h4, p {
@@ -49,6 +68,8 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: ${(props) => props.theme.colors.colorText};
   }
+
+
 `;
 
 export const Title = styled.h1`
@@ -65,6 +86,29 @@ export const Title = styled.h1`
     display: block;
     width: 1.5rem;
     height: 0.5rem;
+    background: ${(props) => props.theme.colors.colorPrimary};
+    position: absolute;
+    bottom: 5px;
+    left: -5px;
+    border-radius: 0.2rem;
+    z-index: -1;
+  }
+`;
+
+export const SubTitle = styled.h1`
+  font-family: var(--type-second);
+  line-height: 1;
+  font-size: 3rem;
+  margin: 1rem 0;
+  position: relative;
+  z-index: 1;
+  color: ${(props) => props.theme.colors.colorText};
+
+  &:after {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1.5rem;
     background: ${(props) => props.theme.colors.colorPrimary};
     position: absolute;
     bottom: 5px;

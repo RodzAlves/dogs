@@ -28,7 +28,7 @@ export const UserStorage = ({ children }) => {
       const { token } = await tokenResponse.json();
       window.localStorage.setItem('token', token);
       await getUser(token);
-      history.push('/profile');
+      history.push('/dashboard');
     } catch (err) {
       setError(err.message);
       setLogin(false);

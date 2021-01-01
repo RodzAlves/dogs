@@ -37,12 +37,20 @@ export const FormContainer = styled.div`
 `;
 
 export const ButtonHaveAccount = styled(Link)`
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-top: 30px;
   color: ${(props) => props.theme.colors.colorSubText};
-  margin: 3rem auto;
-  text-align: center;
-  padding: 0.5rem 0;
-  border: 1px solid ${(props) => props.theme.colors.colorSubText};
-  border-radius: 1rem;
-  max-width: 60%;
+  opacity: 0.5;
+  transition: 0.2s;
+  margin-bottom: 1rem;
+
+  &:hover,
+  &:active {
+    color: ${(props) => props.theme.colors.colorSubText};
+    opacity: 0.3;
+  }
 `;

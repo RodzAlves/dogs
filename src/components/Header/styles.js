@@ -54,6 +54,8 @@ export const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  margin: 0 0.5rem;
 `;
 
 export const InfoWrapper = styled.div`

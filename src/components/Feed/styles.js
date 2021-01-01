@@ -1,14 +1,18 @@
 import styled from 'styled-components';
 import IconView from '../../assets/visualizacao.svg';
 
-export const Container = styled.section`
+export const Container = styled.div`
   max-width: 50rem;
   padding: 0 1rem;
   margin: 0 auto;
   margin-top: 3rem;
 `;
 
-export const ModalContent = styled.div``;
+export const Message = styled.p`
+  text-align: center;
+  padding: 2rem 0 4rem 0;
+  color: ${(props) => props.theme.colors.colorText};
+`;
 
 export const PhotosContent = styled.ul`
   display: grid;
@@ -28,7 +32,7 @@ export const PhotoItem = styled.li`
   overflow: hidden;
   cursor: pointer;
 
-  img {
+  div {
     grid-area: 1/1;
   }
 

@@ -12,12 +12,6 @@ export const FeedIcon = styled(Feed)`
   }
 `;
 
-export const StatisticsIcon = styled(Statistics)`
-  rect {
-    fill: ${(props) => props.theme.colors.iconColor};
-  }
-`;
-
 export const AddNewPhotoIcon = styled(Add)`
   path,
   circle {
@@ -52,7 +46,7 @@ export const Container = styled.div.attrs({ activeClassName })`
 export const MenuContent = styled.nav.attrs({ activeClassName })`
   &.navWeb {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
 
     a,

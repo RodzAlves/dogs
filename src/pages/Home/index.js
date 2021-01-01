@@ -1,29 +1,38 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import Feed from '../../components/Feed';
-import { Container, TitleContent, WelcomeWrapper } from './styles';
-import DogWithWoman from '../../assets/dog_woman.svg';
-import Button from '../../components/Button';
+import {
+  Container,
+  HeaderContent,
+  WelcomeWrapper,
+  ButtonSignUp,
+  ButtonLogin,
+  ButtonsContent,
+} from './styles';
+import World from '../../assets/world.svg';
+import Head from '../../utils/Head';
 import { useHistory } from 'react-router-dom';
+import { UserContext } from '../../context/UserContext';
+import { SubTitle } from '../../styles/global';
 
 const Home = () => {
   const history = useHistory();
+  const { login } = useContext(UserContext);
 
   return (
     <Container>
-      <WelcomeWrapper>
-        <TitleContent>
-          <h1>Welcome to Dogs!</h1>
-          <h3>The social network for your dog</h3>
-          <Button
-            onClick={() => {
-              history.push('/create-user');
-            }}
-          >
-            Sign up now
-          </Button>
-        </TitleContent>
-        <img src={DogWithWoman} alt="Dog Image" />
-      </WelcomeWrapper>
+      <Head
+        title="Home"
+        description="Dogs social network home, with latest pictures."
+      />
+      {!login && (
+        <WelcomeWrapper>
+          <HeaderContent>
+            <h1>All dogs in one place!</h1>
+          </HeaderContent>
+          <img src={World} alt="Dog Image" />
+        </WelcomeWrapper>
+      )}
+      <SubTitle>The lastest pictures</SubTitle>
       <Feed />
     </Container>
   );

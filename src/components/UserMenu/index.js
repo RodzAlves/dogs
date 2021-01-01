@@ -10,7 +10,7 @@ import {
   MobileButton,
 } from './styles';
 import { UserContext } from '../../context/UserContext';
-import { Title } from '../../styles/global';
+import { SubTitle } from '../../styles/global';
 import useMedia from '../../hooks/useMedia';
 import { useLocation } from 'react-router-dom';
 
@@ -28,7 +28,7 @@ const UserMenu = ({ children }) => {
   return (
     <Container>
       <header>
-        <Title>{children}</Title>
+        <SubTitle>{children}</SubTitle>
         {hasMobileChange && (
           <MobileButton
             open={mobileMenuOpen}
@@ -41,13 +41,9 @@ const UserMenu = ({ children }) => {
             mobileMenuOpen && 'navMobileActive'
           }`}
         >
-          <Link to="/profile">
+          <Link to="/dashboard">
             <FeedIcon />
             {hasMobileChange && 'My Feed'}
-          </Link>
-          <Link to="/statistics">
-            <StatisticsIcon />
-            {hasMobileChange && 'Statistics'}
           </Link>
           <Link to="/new-photo">
             <AddNewPhotoIcon />

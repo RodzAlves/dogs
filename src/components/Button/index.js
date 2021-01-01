@@ -2,10 +2,12 @@ import React from 'react';
 
 import { Container } from './styles';
 
-const Button = ({ children, ...props }) => {
+const Button = ({ solid, children, ...props }) => {
   return (
     <Container>
-      <button {...props}>{children}</button>
+      <button solid={solid} {...props}>
+        {children}
+      </button>
     </Container>
   );
 };

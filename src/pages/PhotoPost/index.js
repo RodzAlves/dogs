@@ -8,6 +8,7 @@ import Button from '../../components/Button';
 import UserMenu from '../../components/UserMenu';
 import { PHOTO_POST } from '../../services/api';
 import { useHistory } from 'react-router-dom';
+import Head from '../../utils/Head';
 
 const NewPhotoPost = () => {
   const name = useForm();
@@ -18,7 +19,7 @@ const NewPhotoPost = () => {
   const history = useHistory();
 
   useEffect(() => {
-    if (data) history.push('/profile');
+    if (data) history.push('/dashboard');
   }, [data, history]);
 
   function handleNewPhotoPost(event) {
@@ -47,6 +48,10 @@ const NewPhotoPost = () => {
 
   return (
     <Animation>
+      <Head
+        title="Post your photo"
+        description="Posting your photo on the social network Dogs"
+      />
       <UserMenu>New Photo</UserMenu>
       <FormContent>
         <form onSubmit={handleNewPhotoPost}>
@@ -55,9 +60,9 @@ const NewPhotoPost = () => {
           <Input label="Age" type="number" name="idade" {...age} />
           <input type="file" name="img" id="img" onChange={handleUploadImage} />
           {loading ? (
-            <Button disabled>Loading...</Button>
+            <Button disabled>SENDING...</Button>
           ) : (
-            <Button>Enviar</Button>
+            <Button>POST</Button>
           )}
           {error && <p style={{ color: '#f31', margin: '1rem 0' }}>{error}</p>}
         </form>

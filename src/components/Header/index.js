@@ -27,14 +27,17 @@ export default function Header({ children }) {
           <DogsLogo />
         </LogoContainer>
         <InfoWrapper>
+          <StyledLink to="/about">
+            <Text>About</Text>
+          </StyledLink>
           {data ? (
-            <StyledLink to="/profile">
+            <StyledLink to="/dashboard">
               <Text>{data.nome}</Text>
               <UserIcon />
             </StyledLink>
           ) : (
             <StyledLink to="/login">
-              <Text>Login / Register</Text>
+              <Text>Login / Sign Up</Text>
               <UserIcon />
             </StyledLink>
           )}

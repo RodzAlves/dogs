@@ -1,20 +1,24 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
 
 export const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   button {
-    margin-top: 20px;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    height: 50px;
     font-family: var(--type-first);
     cursor: pointer;
     border: none;
     border-radius: 0.4rem;
     background: ${(props) => props.theme.colors.colorPrimary};
-    color: #764701;
-    width: 100%;
+    color: ${(props) => (props.solid ? 'transparent' : '#764701')};
+    width: 50%;
     padding: 0.8rem 1.2rem;
     box-sizing: border-box;
     transition: 0.4s;
+
     &:hover,
     &:focus {
       outline: none;

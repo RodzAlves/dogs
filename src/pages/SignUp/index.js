@@ -8,6 +8,8 @@ import { Animation, Title } from '../../styles/global';
 import { USER_POST } from '../../services/api';
 import { UserContext } from '../../context/UserContext';
 import { useHistory } from 'react-router-dom';
+import Error from '../../utils/Error';
+import Head from '../../utils/Head';
 
 const CreateUserForm = () => {
   const username = useForm();
@@ -28,15 +30,19 @@ const CreateUserForm = () => {
     const { response } = await request(url, options);
     if (response.ok) {
       handleUserLogin(username.value, password.value);
-      history.push('/profile');
+      history.push('/dashboard');
     }
   }
 
   return (
     <Animation>
+      <Head
+        title="Create your account"
+        description="Creating an account on the Dogs social network."
+      />
       <Container>
         <FormContainer>
-          <Title>Create your account</Title>
+          <Title>Sign up</Title>
           <form onSubmit={handleCreateUser}>
             <Input label="Username" type="text" name="username" {...username} />
             <Input label="Email" type="email" name="email" {...email} />
@@ -49,12 +55,10 @@ const CreateUserForm = () => {
             {loading ? (
               <Button disabled>Signing up...</Button>
             ) : (
-              <Button>Register</Button>
+              <Button>CREATE</Button>
             )}
-            <ButtonHaveAccount to="/login">I have an account</ButtonHaveAccount>
-            {error && (
-              <p style={{ color: '#f31', margin: '1rem 0' }}>{error}</p>
-            )}
+            <Error error={error && 'User or email already registered.'} />
+            <ButtonHaveAccount to="/login">I HAVE AN ACCOUNT</ButtonHaveAccount>
           </form>
         </FormContainer>
       </Container>
