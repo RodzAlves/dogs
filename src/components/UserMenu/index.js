@@ -4,7 +4,6 @@ import {
   MenuContent,
   Link,
   FeedIcon,
-  StatisticsIcon,
   AddNewPhotoIcon,
   LogoutIcon,
   MobileButton,

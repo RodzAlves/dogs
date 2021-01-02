@@ -1,7 +1,6 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { ReactComponent as Feed } from '../../assets/feed.svg';
-import { ReactComponent as Statistics } from '../../assets/estatisticas.svg';
 import { ReactComponent as Add } from '../../assets/adicionar.svg';
 import { ReactComponent as Logout } from '../../assets/sair.svg';
 

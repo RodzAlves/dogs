@@ -9,7 +9,6 @@ import LostPassword from './pages/LostPassword';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
 import PhotoPost from './pages/PhotoPost';
-import Statistics from './pages/Statistics';
 import NotFound from './pages/NotFound';
 import Photo from './pages/Photo';
 import Profile from './pages/Profile';
@@ -30,8 +29,6 @@ const Routes = () => {
         <Route path="/profile/:user" component={Profile} />
         <ProtectedRoute exact path="/dashboard" component={Dashboard} />
         <ProtectedRoute exact path="/new-photo" component={PhotoPost} />
-        <ProtectedRoute exact path="/statistics" component={Statistics} />
-
         <Route path="*" component={NotFound} />
       </Switch>
       <Footer />

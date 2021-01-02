@@ -1,19 +1,11 @@
 import styled from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
 import { ReactComponent as Feed } from '../../assets/feed.svg';
-import { ReactComponent as Statistics } from '../../assets/estatisticas.svg';
 import { ReactComponent as Add } from '../../assets/adicionar.svg';
 import { ReactComponent as Logout } from '../../assets/sair.svg';
 
 export const FeedIcon = styled(Feed)`
   path,
   circle {
-    fill: ${(props) => props.theme.colors.iconColor};
-  }
-`;
-
-export const StatisticsIcon = styled(Statistics)`
-  rect {
     fill: ${(props) => props.theme.colors.iconColor};
   }
 `;
@@ -31,8 +23,6 @@ export const LogoutIcon = styled(Logout)`
     fill: ${(props) => props.theme.colors.iconColor};
   }
 `;
-
-const activeClassName = 'nav-item-active';
 
 export const Container = styled.div`
   max-width: 50rem;

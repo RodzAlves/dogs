@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import DownloadIcon from '../../assets/download.svg';
 
 export const Container = styled.div`
   max-width: 50rem;

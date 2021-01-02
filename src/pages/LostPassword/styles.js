@@ -1,7 +1,5 @@
 import styled from 'styled-components';
-
 import LoginBackground from '../../assets/login.jpg';
-import { Link } from 'react-router-dom';
 
 export const Container = styled.section`
   display: grid;
@@ -31,6 +29,7 @@ export const Container = styled.section`
 export const FormContainer = styled.div`
   max-width: 30rem;
   padding: 2rem;
+  margin-top: 5vh;
 
   @media (max-width: 40rem) {
     max-width: 100%;

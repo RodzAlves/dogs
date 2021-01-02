@@ -1,21 +1,12 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import Feed from '../../components/Feed';
-import {
-  Container,
-  HeaderContent,
-  WelcomeWrapper,
-  ButtonSignUp,
-  ButtonLogin,
-  ButtonsContent,
-} from './styles';
+import { Container, HeaderContent, WelcomeWrapper } from './styles';
 import World from '../../assets/world.svg';
 import Head from '../../utils/Head';
-import { useHistory } from 'react-router-dom';
 import { UserContext } from '../../context/UserContext';
 import { SubTitle } from '../../styles/global';
 
 const Home = () => {
-  const history = useHistory();
   const { login } = useContext(UserContext);
 
   return (

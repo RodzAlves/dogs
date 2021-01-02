@@ -7,6 +7,7 @@ import Loading from '../../utils/Loading';
 import Photo from '../../components/Photo';
 import { Container } from './styles';
 import Head from '../../utils/Head';
+import { Animation } from '../../styles/global';
 
 const PhotoPage = () => {
   const { id } = useParams();
@@ -21,13 +22,15 @@ const PhotoPage = () => {
   if (loading) return <Loading />;
   if (data)
     return (
-      <Container>
-        <Head
-          title={`${data.photo.title}`}
-          description={`Photo page of ${data.photo.title}`}
-        />
-        <Photo single={true} data={data} />
-      </Container>
+      <Animation>
+        <Container>
+          <Head
+            title={`${data.photo.title}`}
+            description={`Photo page of ${data.photo.title}`}
+          />
+          <Photo single={true} data={data} />
+        </Container>
+      </Animation>
     );
   else return null;
 };

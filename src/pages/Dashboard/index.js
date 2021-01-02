@@ -5,8 +5,6 @@ import { UserContext } from '../../context/UserContext';
 import UserMenu from '../../components/UserMenu';
 import Feed from '../../components/Feed';
 import Head from '../../utils/Head';
-import { Link } from 'react-router-dom';
-import { SubTitle } from '../../styles/global';
 
 const Dashboard = () => {
   const { login, data } = useContext(UserContext);

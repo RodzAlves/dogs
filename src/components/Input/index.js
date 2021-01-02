@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
-import { AiOutlineUser, AiOutlineLock, AiOutlineMail } from 'react-icons/ai';
-import { Container, InputContainer, Icon, StyledSVG } from './styles';
+import React from 'react';
+import { Container, InputContainer } from './styles';
 import passwordIcon from '../../assets/lock.svg';
 import userIcon from '../../assets/user.svg';
 import mailIcon from '../../assets/mail.svg';

@@ -45,8 +45,8 @@ export const ButtonHaveAccount = styled(Link)`
   margin-top: 30px;
   color: ${(props) => props.theme.colors.colorSubText};
   opacity: 0.5;
-  transition: 0.2s;
   margin-bottom: 1rem;
+  transition: 0.2s;
 
   &:hover,
   &:active {

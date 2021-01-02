@@ -6,8 +6,8 @@ const Head = (props) => {
     document
       .querySelector("meta[name='description']")
       .setAttribute('content', props.description || '');
-  }, []);
-  return <div></div>;
+  }, [props]);
+  return <></>;
 };
 
 export default Head;

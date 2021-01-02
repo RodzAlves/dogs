@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { FiLogIn } from 'react-icons/fi';
 import { Link, useHistory } from 'react-router-dom';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -15,7 +14,6 @@ import {
 import Error from '../../utils/Error';
 import Head from '../../utils/Head';
 import loginIcon from '../../assets/log-in.svg';
-import userIcon from '../../assets/user.svg';
 
 const Login = () => {
   const username = useForm();

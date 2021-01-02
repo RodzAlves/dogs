@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Container, FormContainer } from './styles';
-import { Title } from '../../styles/global';
+import { Title, Animation } from '../../styles/global';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import useForm from '../../hooks/useForm/useForm';
@@ -57,63 +57,67 @@ const LostPassword = () => {
 
   if (location === '/lost-password')
     return (
-      <Container>
-        <FormContainer>
-          <Head
-            title="Recover your password"
-            description="Retrieve your password in Dogs"
-          />
-          <Title>Recover your password</Title>
-          {data ? (
-            <p style={{ color: '#06d6a0', marginTop: '2rem' }}>
-              {data && 'Email successfully sent!'}
-            </p>
-          ) : (
-            <form onSubmit={handleRecoverPassword}>
-              <Input
-                label="E-mail or Username"
-                type="text"
-                name="email"
-                {...emailToRecover}
-              />
-              {loading ? (
-                <Button disabled>SENDING...</Button>
-              ) : (
-                <Button>SEND EMAIL</Button>
-              )}
-            </form>
-          )}
+      <Animation>
+        <Container>
+          <FormContainer>
+            <Head
+              title="Recover your password"
+              description="Retrieve your password in Dogs"
+            />
+            <Title>Forgot password?</Title>
+            {data ? (
+              <p style={{ color: '#06d6a0', marginTop: '2rem' }}>
+                {data && 'Email successfully sent!'}
+              </p>
+            ) : (
+              <form onSubmit={handleRecoverPassword}>
+                <Input
+                  label="E-mail or Username"
+                  type="text"
+                  name="email"
+                  {...emailToRecover}
+                />
+                {loading ? (
+                  <Button disabled>SENDING...</Button>
+                ) : (
+                  <Button>SEND EMAIL</Button>
+                )}
+              </form>
+            )}
 
-          <Error error={error && 'Enter the email or login.'} />
-        </FormContainer>
-      </Container>
+            <Error error={error && 'Enter the email or login.'} />
+          </FormContainer>
+        </Container>
+      </Animation>
     );
   else if (location === `/lost-password/reset/`)
     return (
-      <Container>
-        <FormContainer>
-          <Head
-            title="Reset your password"
-            description="Reset your password in Dogs"
-          />
-          <Title>Reset password</Title>
-          <form onSubmit={handleResetPassword}>
-            <Input
-              label="New Password"
-              type="password"
-              name="password"
-              {...password}
+      <Animation>
+        <Container>
+          <FormContainer>
+            <Head
+              title="Reset your password"
+              description="Reset your password in Dogs"
             />
-            {loading ? (
-              <Button disabled>CHANGING...</Button>
-            ) : (
-              <Button>CHANGE PASSWORD</Button>
-            )}
-          </form>
+            <Title>Reset password</Title>
+            <form onSubmit={handleResetPassword}>
+              <Input
+                label="New Password"
+                type="password"
+                name="password"
+                {...password}
+              />
+              {loading ? (
+                <Button disabled>CHANGING...</Button>
+              ) : (
+                <Button>CHANGE PASSWORD</Button>
+              )}
+            </form>
 
-          <Error error={error} />
-        </FormContainer>
-      </Container>
+            <Error error={error} />
+          </FormContainer>
+        </Container>
+      </Animation>
     );
   else return null;
 };

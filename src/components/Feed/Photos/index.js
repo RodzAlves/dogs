@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { PhotosContent, PhotoItem } from './styles';
 import Image from '../../../utils/Image';
 import useFetch from '../../../hooks/useFetch/useFetch';

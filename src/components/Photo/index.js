@@ -19,7 +19,7 @@ import Image from '../../utils/Image';
 
 const Photo = ({ data, single }) => {
   const user = useContext(UserContext);
-  const { request, error, loading } = useFetch();
+  const { request, error } = useFetch();
   const { photo, comments } = data;
   const { id } = photo;
   const [comment, setComment] = useState('');

@@ -37,17 +37,14 @@ export const UserStorage = ({ children }) => {
     }
   }
 
-  const handleUserLogout = useCallback(
-    async function () {
-      setData(null);
-      setError(null);
-      setLoading(false);
-      setLogin(false);
-      window.localStorage.removeItem('token');
-      history.push('/login');
-    },
-    [history]
-  );
+  const handleUserLogout = useCallback(async function () {
+    setData(null);
+    setError(null);
+    setLoading(false);
+    setLogin(false);
+    window.localStorage.removeItem('token');
+    history.push('/login');
+  }, []);
 
   useEffect(() => {
     async function handleAuthLogin() {
