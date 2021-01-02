@@ -52,7 +52,7 @@ const NewPhotoPost = () => {
         title="Post your photo"
         description="Posting your photo on the social network Dogs"
       />
-      <UserMenu>New Photo</UserMenu>
+      <UserMenu>New photo</UserMenu>
       <FormContent>
         <form onSubmit={handleNewPhotoPost}>
           <Input label="Name" type="text" name="nome" {...name} />

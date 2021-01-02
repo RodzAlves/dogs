@@ -62,8 +62,6 @@ const Login = () => {
             <Error error={error && 'Invalid username or password.'} />
           </form>
 
-          {/*<ButtonLost to="/lost-password">FORGOT PASSWORD?</ButtonLost>*/}
-
           <RegisterContainer>
             <h2>Register</h2>
             <p>Don't have an account yet?</p>

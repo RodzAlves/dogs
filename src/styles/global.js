@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
       transition: background-color 5000s ease-in-out 0s;
     }
 
-  body {
+  html, body {
     margin: 0px;
     color: #333;
     --type-first: Montserrat, Helvetica, Arial, sans-serif;
@@ -33,9 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     padding-top: 4rem;
     background: ${(props) => props.theme.colors.colorBackground};
     transition: 0.2s;
-    display: flex;
-    flex-direction: column;
-    min-height: calc(100vh + 10rem);
+    margin-top: -2rem;
   }
 
   h1, h2, h3, h4, p {
@@ -81,18 +79,6 @@ export const Title = styled.h1`
   z-index: 1;
   color: ${(props) => props.theme.colors.colorText};
   text-align: center;
-  &:after {
-    content: '';
-    display: block;
-    width: 1.5rem;
-    height: 0.5rem;
-    background: ${(props) => props.theme.colors.colorPrimary};
-    position: absolute;
-    bottom: 5px;
-    left: -5px;
-    border-radius: 0.2rem;
-    z-index: -1;
-  }
 `;
 
 export const SubTitle = styled.h1`

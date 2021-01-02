@@ -14,7 +14,7 @@ const NotFound = () => {
       <Container>
         <Head title="Page not found" description="Page not found in Dogs" />
         <WrapperInfo>
-          <SubTitle>Page not found</SubTitle>
+          <SubTitle>Page Not Found</SubTitle>
           <b>Hey puppy, you entered a non-existent page...</b>
           <Button onClick={() => history.push('/')}>GO HOME</Button>
         </WrapperInfo>

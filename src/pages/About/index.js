@@ -17,6 +17,9 @@ const About = () => {
           <ul>
             <li>React JS</li>
             <li>Styled Components</li>
+            <li>Theme Switcher</li>
+            <li>React Hooks</li>
+            <li>Context API</li>
             <li>React Router DOM</li>
           </ul>
           <h3>This is a study project for the React Complete course.</h3>

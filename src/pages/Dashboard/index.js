@@ -16,7 +16,7 @@ const Dashboard = () => {
   return (
     <Container>
       <Head title="My account" />
-      <UserMenu>My account</UserMenu>
+      <UserMenu>My photos</UserMenu>
       <Feed user={data.id} />
     </Container>
   );
