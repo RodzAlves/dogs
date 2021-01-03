@@ -16,6 +16,7 @@ export const FormContent = styled.div`
 
   @media (max-width: 40rem) {
     grid-template-columns: 1fr;
+    margin-bottom: 3rem;
   }
   input {
     margin-bottom: 1rem;
