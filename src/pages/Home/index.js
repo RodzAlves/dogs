@@ -1,14 +1,10 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Feed from '../../components/Feed';
-import { Container, HeaderContent, WelcomeWrapper, Slogan } from './styles';
-import World from '../../assets/world.svg';
+import { Container } from './styles';
 import Head from '../../utils/Head';
-import { UserContext } from '../../context/UserContext';
 import { SubTitle } from '../../styles/global';
 
 const Home = () => {
-  const { login } = useContext(UserContext);
-
   return (
     <Container>
       <Head
